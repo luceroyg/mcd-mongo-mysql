@@ -15,7 +15,7 @@ Para guardar su progreso cada vez que termine un ejercicio, o cambie una consult
 
 ```bash
 git add .
-git commit -m "Enviando progreso"
+git commit -m "Enviando intento"
 git push
 ```
 
