@@ -165,7 +165,15 @@ Respuesta:
 ```sql
 -- Su respuesta aqui:
 
-SELECT ...
-
+SELECT a.actor_id, a.first_name, a.last_name
+FROM actor a, film_actor b, film c
+WHERE a.actor_id = b.actor_id
+AND c.film_id = b.film_id
+AND NOT EXISTS(SELECT * FROM film_actor x, film_category,category
+WHERE x.film_id = film_category.film_id 
+AND film_category.category_id = category.category_id
+AND category.name = 'Comedy'
+AND x.actor_id = b.actor_id)
+GROUP BY a.actor_id;
 ```
 
