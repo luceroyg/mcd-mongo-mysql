@@ -33,7 +33,7 @@ Para instalar la base de datos Sakila en MySQL, se pueden seguir los siguientes 
     apt install -y curl zip
     
     ```
-    
+
     Estos comandos actualizarán los paquetes existentes y luego instalarán los paquetes "curl" y "zip".
     
 6.  Descargar la base de datos Sakila: Para descargar la base de datos Sakila, se puede utilizar el siguiente comando en la terminal del contenedor:
@@ -78,9 +78,7 @@ Tomese 15 minutos para revisar la estructura de datos de sakila, puede encontrar
 
 Si ya tienen MongoDB y MongoExpress a partir del `docker-compose.yml` no requiere hacer nada. 
 
-Para verificar si ya esta corriendo puede ejecutar:
-
-`docker ps`
+Para verificar si ya esta corriendo puede ejecutar:`docker ps`
 
 Lo cual desplegará algo similar a:
 ```bash
