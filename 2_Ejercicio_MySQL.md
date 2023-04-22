@@ -41,7 +41,7 @@ SELECT city.city_id as city_id, city.city, count(store_id) as store_count
 FROM store,address,city
 WHERE store.address_id = address. address_id
 AND address.city_id = city.city_id
-GROUP BY store_id;
+GROUP BY city.city_id;
 
 ```
 
@@ -65,7 +65,10 @@ Respuesta:
 ```sql
 -- Su respuesta aqui:
 
-SELECT ...
+SELECT language.language_id as language_id, language.name as language, count(film.film_id) as film_count
+FROM language
+LEFT JOIN film ON language.language_id = film.language_id
+GROUP BY language_id;
 
 ```
 
