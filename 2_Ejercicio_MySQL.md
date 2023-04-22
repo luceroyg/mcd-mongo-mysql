@@ -96,7 +96,7 @@ Respuesta:
 
 SELECT a.actor_id, a.first_name, a.last_name, count(film_actor.film_id) as film_count
 FROM actor a, film_actor, film
-WHERE a.actor_id = film_actor.actor
+WHERE a.actor_id = film_actor.actor_id
 AND film.film_id = film_actor.film_id
 GROUP BY film_actor.actor_id
 HAVING film_count > 35;
@@ -127,7 +127,16 @@ Respuesta:
 ```sql
 -- Su respuesta aqui:
 
-SELECT ...
+SELECT a.actor_id, a.first_name, a.last_name, count(film_actor.film_id) as film_count
+FROM actor a, film_actor, film, film_category, category
+WHERE a.actor_id = film_actor.actor_id
+AND film.film_id = film_actor.film_id
+AND film.film_id = film_category.film_id
+AND film_category.category_id = category.category_id
+AND category.name = 'Comedy'
+GROUP BY film_actor.actor_id
+ORDER BY film_count DESC
+LIMIT 10;
 
 ```
 
